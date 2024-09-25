@@ -1,10 +1,21 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const SignIn = () => {
+  const navigate = useNavigate();
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  
+    console.log('Form submitted');
+
+    navigate('/');
+  };
+
   return (
     <div className="max-w-md mx-auto py-16 px-4">
       <h2 className="text-2xl font-bold mb-6">Sign In</h2>
-      <form className="space-y-6">
+      <form className="space-y-6" onSubmit={handleSubmit}>
         <div>
           <label htmlFor="email" className="block text-gray-700">Email Address</label>
           <input type="email" id="email" name="email" className="w-full p-3 border rounded-md" required />

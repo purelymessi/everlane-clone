@@ -23,7 +23,36 @@ const FAQ = () => {
             Yes, we offer international shipping to many countries. Shipping rates and delivery times vary depending on your location.
           </p>
         </div>
-        {/* Add more FAQ items as needed */}
+        <div>
+          <h2 className="text-xl font-semibold">What payment methods do you accept?</h2>
+          <p className="text-gray-700">
+            We accept various payment methods including credit cards, PayPal, and bank transfers. You can select your preferred payment method at checkout.
+          </p>
+        </div>
+        <div>
+          <h2 className="text-xl font-semibold">Can I change or cancel my order?</h2>
+          <p className="text-gray-700">
+            If you need to change or cancel your order, please contact us as soon as possible. We can make changes if your order has not yet been processed.
+          </p>
+        </div>
+        <div>
+          <h2 className="text-xl font-semibold">What should I do if I receive a damaged item?</h2>
+          <p className="text-gray-700">
+            If you receive a damaged item, please contact our customer service within 7 days of receiving the product. We will assist you with a replacement or refund.
+          </p>
+        </div>
+        <div>
+          <h2 className="text-xl font-semibold">Do you offer gift cards?</h2>
+          <p className="text-gray-700">
+            Yes, we offer gift cards that can be purchased on our website. They make the perfect gift for any occasion!
+          </p>
+        </div>
+        <div>
+          <h2 className="text-xl font-semibold">How can I contact customer support?</h2>
+          <p className="text-gray-700">
+            You can reach our customer support team via email at support@example.com or by using the contact form on our website. We aim to respond within 24 hours.
+          </p>
+        </div>
       </div>
     </div>
   );

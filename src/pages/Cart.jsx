@@ -1,52 +1,43 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 const Cart = () => {
-  // Mock cart items; replace with real data from state or API
-  const cartItems = [
-    {
-      id: 1,
-      name: 'Product 1',
-      imageUrl: 'https://media.everlane.com/image/upload/v1/products/12345.jpg',
-      price: '$50',
-      quantity: 2,
-    },
-    {
-      id: 2,
-      name: 'Product 2',
-      imageUrl: 'https://media.everlane.com/image/upload/v1/products/12346.jpg',
-      price: '$75',
-      quantity: 1,
-    },
-  ];
+  const [cart, setCart] = useState([]);
 
-  const totalAmount = cartItems.reduce((total, item) => total + parseFloat(item.price.slice(1)) * item.quantity, 0);
+  useEffect(() => {
+    const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+    setCart(cartItems);
+  }, []);
+
+  const removeFromCart = (id) => {
+    const updatedCart = cart.filter((item) => item.id !== id);
+    setCart(updatedCart);
+    localStorage.setItem('cart', JSON.stringify(updatedCart));
+  };
 
   return (
-    <div className="max-w-7xl mx-auto py-16 px-4">
-      <h1 className="text-3xl font-bold mb-6">Shopping Cart</h1>
-      {cartItems.length === 0 ? (
-        <p className="text-gray-600">Your cart is empty.</p>
+    <div className="container mx-auto mt-10">
+      <h2 className="text-4xl font-bold mb-8 text-center text-blue-600">Your Cart</h2>
+      {cart.length === 0 ? (
+        <p className="text-center text-gray-500 text-lg">Your cart is empty.</p>
       ) : (
-        <div>
-          <ul className="space-y-4">
-            {cartItems.map((item) => (
-              <li key={item.id} className="flex items-center border-b py-4">
-                <img src={item.imageUrl} alt={item.name} className="w-24 h-24 object-cover rounded-md mr-4" />
-                <div className="flex-1">
-                  <h2 className="text-lg font-bold">{item.name}</h2>
-                  <p className="text-gray-600">Price: {item.price}</p>
-                  <p className="text-gray-600">Quantity: {item.quantity}</p>
-                </div>
+        <div className="grid grid-cols-1 gap-4">
+          {cart.map((item) => (
+            <div key={item.id} className="flex justify-between items-center mb-4 p-4 border border-gray-300 rounded-lg shadow-md transition-shadow hover:shadow-lg">
+              <div className="flex items-center">
+                <img src={item.imageUrl} alt={item.name} className="w-20 h-20 object-cover mr-4 rounded" />
                 <div>
-                  <button className="text-red-600 hover:underline">Remove</button>
+                  <h3 className="text-lg font-semibold text-gray-800">{item.name}</h3>
+                  <p className="text-gray-600">{item.price}</p>
                 </div>
-              </li>
-            ))}
-          </ul>
-          <div className="mt-6">
-            <h2 className="text-xl font-bold">Total: ${totalAmount.toFixed(2)}</h2>
-            <button className="bg-blue-600 text-white px-6 py-3 rounded-lg mt-4 hover:bg-blue-700 transition">Checkout</button>
-          </div>
+              </div>
+              <button
+                className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition-colors"
+                onClick={() => removeFromCart(item.id)}
+              >
+                Remove
+              </button>
+            </div>
+          ))}
         </div>
       )}
     </div>
