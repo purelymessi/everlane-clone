@@ -4,7 +4,7 @@ const PaymentCard = () => {
   const [cardNumber, setCardNumber] = useState('');
   const [expiryDate, setExpiryDate] = useState('');
   const [cvv, setCvv] = useState('');
-  const [cardType, setCardType] = useState('Visa');
+  const [cardType, setCardType] = useState('Visa'); 
   const [rememberCard, setRememberCard] = useState(false);
   const [error, setError] = useState('');
   const [success, setSuccess] = useState(false);
@@ -12,11 +12,18 @@ const PaymentCard = () => {
 
   const handlePayment = async (e) => {
     e.preventDefault();
+    
+    // Валидация полей
     if (!cardNumber || !expiryDate || !cvv) {
       setError('Пожалуйста, заполните все поля.');
       return;
     }
 
+   
+    if (!/^\d{16}$/.test(cardNumber)) {
+      setError('Номер карты должен содержать 16 цифр.');
+      return;
+    }
     setLoading(true);
     setError('');
     setSuccess(false);
