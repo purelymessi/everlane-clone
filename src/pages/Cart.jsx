@@ -16,6 +16,22 @@ const Cart = () => {
     localStorage.setItem('cart', JSON.stringify(updatedCart));
   };
 
+  const handleIncreaseQuantity = (id) => {
+    const updatedCart = cart.map((item) =>
+      item.id === id ? { ...item, quantity: (item.quantity || 1) + 1 } : item
+    );
+    setCart(updatedCart);
+    localStorage.setItem('cart', JSON.stringify(updatedCart));
+  };
+
+  const handleDecreaseQuantity = (id) => {
+    const updatedCart = cart.map((item) =>
+      item.id === id && item.quantity > 1 ? { ...item, quantity: item.quantity - 1 } : item
+    );
+    setCart(updatedCart);
+    localStorage.setItem('cart', JSON.stringify(updatedCart));
+  };
+
   const handlePaymentCard = () => {
     navigate('/payment/card'); 
   };
@@ -37,15 +53,30 @@ const Cart = () => {
                 <img src={item.imageUrl} alt={item.name} className="w-20 h-20 object-cover mr-4 rounded" />
                 <div>
                   <h3 className="text-lg font-semibold text-gray-800">{item.name}</h3>
-                  <p className="text-gray-600">{item.price}</p>
+                  <p className="text-gray-600">Цена: {item.price}</p>
+                  <p className="text-gray-600">Количество: {item.quantity || 1}</p>
                 </div>
               </div>
-              <button
-                className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition-colors"
-                onClick={() => handleRemoveFromCart(item.id)}
-              >
-                Удалить
-              </button>
+              <div className="flex items-center space-x-2">
+                <button
+                  className="bg-green-500 text-white px-2 py-1 rounded-lg hover:bg-green-600 transition-colors"
+                  onClick={() => handleIncreaseQuantity(item.id)}
+                >
+                  +
+                </button>
+                <button
+                  className="bg-yellow-500 text-white px-2 py-1 rounded-lg hover:bg-yellow-600 transition-colors"
+                  onClick={() => handleDecreaseQuantity(item.id)}
+                >
+                  -
+                </button>
+                <button
+                  className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition-colors"
+                  onClick={() => handleRemoveFromCart(item.id)}
+                >
+                  Удалить
+                </button>
+              </div>
             </div>
           ))}
         </div>
