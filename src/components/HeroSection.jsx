@@ -15,7 +15,7 @@ const HeroSection = () => {
         <p className="text-lg text-gray-600">Modern essentials. Ethical production.</p>
 
         <div className="mt-8 text-center">
-          <a href="/shop" className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-800 transition">Shop Now</a>
+          <Link to="/shop" className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-800 transition">Shop Now</Link>
         </div>
       </motion.div>
 
