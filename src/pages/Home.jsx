@@ -9,12 +9,12 @@ const Home = () => {
     { id: 4, name: 'Wool Sweater', price: '$60', imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSC34GLloKe1G0D2ZMvVf0YoKmj9I2P-xCO_Q&s' },
     { id: 5, name: 'Canvas Sneakers', price: '$35', imageUrl: 'https://shop.mango.com/assets/rcs/pics/static/T7/fotos/S/77070363_08_D5.jpg?imwidth=2048&imdensity=1&ts=1713794929815' },
     { id: 6, name: 'Denim Jacket', price: '$90', imageUrl: 'https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg' },
-    { id: 7, name: 'Casual Hoodie', price: '$45', imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTb3vE2p5Q3EECzkmKPqF3FmHpUsQlfUMgr5A&s' },
-    { id: 8, name: 'Formal Shirt', price: '$50', imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVVwRGGGFsFzzGl9hgn5bHuJg5tqDwRLukog&s' },
-    { id: 9, name: 'Chino Pants', price: '$55', imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQODjzAmxuD3jFz8vFZbMcvLcv7fr0eR2xTA&s' },
-    { id: 10, name: 'Flip Flops', price: '$20', imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2NkF3Bc7Xx1yXQpEYYv2QNgp4qXnDaW4kYg&s' },
-    { id: 11, name: 'Running Shoes', price: '$75', imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnMOyEGRK38Nq_P1RGw2sT93bBccBqLCxqng&s' },
-    { id: 12, name: 'Backpack', price: '$30', imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtD-OYynzzWz-cG4RIu7r7-0wflLfnHgicZg&s' },
+    { id: 7, name: 'Casual Hoodie', price: '$45', imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCxcHjI1XaU_Zi8mW873Isl3PNsqpT_UDodQ&s' },
+    { id: 8, name: 'Formal Shirt', price: '$50', imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSL4hoMkeG2A2GHoK_ZtB4qWZ31e3I_xBl21Q&s' },
+    { id: 9, name: 'Chino Pants', price: '$55', imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKoFC6qPg3u3IDIr-hiMmz6yzYEQVlqyu1lw&s' },
+    { id: 10, name: 'Flip Flops', price: '$20', imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3MMmU8FtR7HvHIalddMB1qdQFQCje4n44KQ&s' },
+    { id: 11, name: 'Running Shoes', price: '$75', imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoXxiq_-WNBfxDxOk8XKVmsAz3h-kX0ncIXg&s' },
+    { id: 12, name: 'Backpack', price: '$30', imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSYdyxvWLobGSPPoJB6vViHImzQOmRpzBy4Q&s' },
   ];
 
   return (

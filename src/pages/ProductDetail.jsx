@@ -70,14 +70,25 @@ const ProductDetail = () => {
     { id: 14, name: 'Denim Jacket', price: '$90', imageUrl: 'https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg' }
     ];
 
+
   const product = products.find((p) => p.id.toString() === id);
 
   const addToCart = () => {
     const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
     const newCartItems = [...cartItems, product];
     localStorage.setItem('cart', JSON.stringify(newCartItems));
-    
-    toast.success(`${product.name} добавлен в корзину!`);
+
+    toast.success(`${product.name} успешно добавлен в корзину!`, {
+      style: {
+        borderRadius: '10px',
+        background: '#333',
+        color: '#fff',
+      },
+      iconTheme: {
+        primary: '#4CAF50',
+        secondary: '#FFFAEE',
+      },
+    });
   };
 
   if (!product) {
@@ -105,6 +116,3 @@ const ProductDetail = () => {
 };
 
 export default ProductDetail;
-imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3d4NZ4mE0WzHFGQ1SFn6irJy6sT5m6YJCuQ&s'
-imageUrl: 'https://m.media-amazon.com/images/I/71phevsZkcL._AC_SL1500_.jpg'
-imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmB3qBJpn913NVD37CtIqYoB_UsHp8JdlEAQ&s'

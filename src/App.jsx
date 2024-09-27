@@ -9,6 +9,8 @@ import FAQ from './pages/FAQ';
 import SignIn from './pages/SignIn';
 import Register from './pages/Register';
 import Cart from './pages/Cart';
+import PaymentCard from './pages/PaymentCard'; // Импортируйте компонент PaymentCard
+import PaymentPaypal from './pages/PaymentPaypal'; // Импортируйте компонент PaymentPaypal
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
@@ -27,6 +29,8 @@ function App() {
         <Route path="/signin" element={<SignIn />} />
         <Route path="/register" element={<Register />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/payment/card" element={<PaymentCard />} /> {/* Новый маршрут для оплаты картой */}
+        <Route path="/payment/paypal" element={<PaymentPaypal />} /> {/* Новый маршрут для PayPal */}
       </Routes>
       <Footer />
     </Router>

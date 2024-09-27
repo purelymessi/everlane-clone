@@ -17,7 +17,7 @@ const Footer = () => {
           <a href="/faq" className="text-zinc-950 hover:underline">FAQ</a>
         </div>
         <p className="text-zinc-950">&copy; 2024 Everlane Clone - All rights reserved.</p>
-        {/* Optional: Add social media links */}
+        
         <div className="mt-4 flex justify-center space-x-4">
           <a href="https://facebook.com" className="text-zinc-950 hover:text-white">Facebook</a>
           <a href="https://twitter.com" className="text-zinc-950 hover:text-white">Twitter</a>
