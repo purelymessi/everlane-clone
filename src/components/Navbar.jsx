@@ -38,6 +38,8 @@ const Navbar = () => {
           <Link to="/contact" className="hover:underline transition-all duration-300">Contact</Link>
           <Link to="/faq" className="hover:underline transition-all duration-300">FAQ</Link>
           <Link to="/cart" className="hover:underline transition-all duration-300">Cart</Link>
+          
+{/*                 Bu hisseni links array kimi qeyd edib, map ede bilersen :) */}
           {isAuthenticated && ( 
             <button 
               onClick={handleLogout} 
@@ -63,6 +65,7 @@ const Navbar = () => {
                 <Link to="/contact" className="hover:underline transition-all duration-300">Contact</Link>
                 <Link to="/faq" className="hover:underline transition-all duration-300">FAQ</Link>
                 <Link to="/cart" className="hover:underline transition-all duration-300">Cart</Link>
+{/*                 Bu hisseni links array kimi qeyd edib, map ede bilersen :) */}
                 {isAuthenticated && (
                   <button 
                     onClick={handleLogout} 
