@@ -1,6 +1,12 @@
 import React from 'react';
 
 const Footer = () => {
+  const links = [
+    {
+      href: "/about",
+      title: "About Us"
+    }
+  ]
   return (
     <footer className="bg-gray-300 py-8 text-center text-black">
       <div className="max-w-7xl mx-auto">
@@ -8,6 +14,7 @@ const Footer = () => {
           <a href="/" className="text-2xl font-bold">Everlane</a>
         </div>
         <div className="flex justify-center space-x-6 mb-4">
+          {links.map((link)=> <a href={link.href}>{link.title}</a>))}
           <a href="/about" className="hover:underline">About Us</a>
           <a href="/contact" className="hover:underline">Contact</a>
           <a href="/privacy" className="hover:underline">Privacy Policy</a>
