@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 const HeroSection = () => {
+  // MAP ISTIFADE ELE AY QERDESH
   return (
     <section className="bg-gray-100 py-20">
       <motion.div
